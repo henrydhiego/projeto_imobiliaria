@@ -29,7 +29,7 @@
         
         require_once 'controller/usuario_controller.php';
         call_user_func(array('usuario_controller','salvar'));
-      //  header('Location: index.php?action=listar');
+        header('Location: index.php?action=listar');
     }
 
 ?>
