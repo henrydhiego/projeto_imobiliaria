@@ -1,6 +1,6 @@
 <?php
 
-require_once '../model/usuario.php';
+require_once 'model/usuario.php';
 
 class usuario_controller{
 
@@ -10,6 +10,7 @@ class usuario_controller{
         $usuario = new usuario();
 
         //armazena os dados no banco de dados, pegando do HTML
+        $usuario->setId($_POST['id']);
         $usuario->setLogin($_POST['login']);
         $usuario->setSenha($_POST['senha1']);
         $usuario->setPermissao($_POST['permissao']);
@@ -23,6 +24,22 @@ class usuario_controller{
         $usuarios = new usuario();
         //chamando a função de listar
         return $usuarios->listAll();
+    }
+
+    public static function editar(){
+        //Cria um Objeto do tipo usuario
+        $usuario = new usuario();
+
+        $usuario = $usuario->find($id);
+
+        return $usuario;
+    }
+
+    public static function excluir($id){
+        //Cria um objeto do tipo usuario
+        $usuario = new usario();
+
+        $usuario = $usuario->remove($id);
     }
 }
 ?>

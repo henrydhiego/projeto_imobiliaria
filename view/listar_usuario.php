@@ -20,18 +20,18 @@
             <tbody>
                 <?php
 
-                require_once "../controller/usuario_controller.php";
+                require_once "controller/usuario_controller.php";
                 $usuarios = call_user_func(array('usuario_controller','listar'));
 
-                if(isset($usuarios)){
+                if(isset($usuarios) && !empty($usuarios)){
                     foreach($usuarios as $usuario){
                         ?>
                         <tr>
                             <td><?php echo $usuario->getLogin(); ?></td>
                             <td><?php echo $usuario->getPermissao(); ?></td>
                             <td>
-                                <a href="">Editar</a>
-                                <a href="">Excluir</a>
+                                <a href="index.php?action=editar&id=<?php echo $usuario->getId(); ?>">Editar</a>
+                                <a href="index.php?action=excluir&id=<?php echo $usuario->getId(); ?>">Excluir</a>
                             </td>
                         </tr>
                         
