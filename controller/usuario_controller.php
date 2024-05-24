@@ -26,7 +26,7 @@ class usuario_controller{
         return $usuarios->listAll();
     }
 
-    public static function editar(){
+    public static function editar($id){
         //Cria um Objeto do tipo usuario
         $usuario = new usuario();
 
@@ -37,7 +37,7 @@ class usuario_controller{
 
     public static function excluir($id){
         //Cria um objeto do tipo usuario
-        $usuario = new usario();
+        $usuario = new usuario();
 
         $usuario = $usuario->remove($id);
     }

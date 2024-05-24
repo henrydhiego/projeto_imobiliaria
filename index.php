@@ -15,6 +15,7 @@
             if($_GET['action'] == 'editar'){
             //Chama uma função PHP que permite informar a classe e o Método que será acionado
                 $usuario = call_user_func(array('usuario_controller','editar'),$_GET['id']);
+                require_once 'view/cad_usuario.php';
             }
  
             if($_GET['action'] == 'listar'){
